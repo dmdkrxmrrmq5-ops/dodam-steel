@@ -1,0 +1,570 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>(주)도담스틸 — 고철·비철·철거·압연재·공장 전문</title>
+<meta name="description" content="철저한 품질과 신뢰를 바탕으로, 고객과 함께 단단한 미래를 만들어갑니다. (주)도담스틸 — 고철·비철·철거·압연재·공장 전문." />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/static/pretendard.css" />
+
+<style>
+  :root{
+    --orange:#E8541E;
+    --orange-d:#c9430f;
+    --ink:#20232a;
+    --ink-2:#2c2f38;
+    --charcoal:#1a1c22;
+    --gray:#6b7280;
+    --line:#e7e9ee;
+    --bg:#ffffff;
+    --bg-soft:#f5f6f8;
+    --radius:16px;
+    --shadow:0 18px 50px -18px rgba(20,22,28,.28);
+    --maxw:1200px;
+    --font:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Malgun Gothic','맑은 고딕',system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  section{position:relative}
+
+  /* ---------- Brand mark ---------- */
+  .mark{width:38px;height:38px;flex:none}
+  .mark .stem,.mark .bowl{fill:var(--ink)}
+  .mark .wedge{fill:var(--orange)}
+
+  /* ---------- Nav ---------- */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;transition:.35s}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:center;gap:11px}
+  .brand-txt{display:flex;flex-direction:column;line-height:1.05}
+  .brand-txt b{font-size:19px;font-weight:800;letter-spacing:-.02em;color:#fff;transition:.35s}
+  .brand-txt span{font-size:10px;letter-spacing:.28em;color:rgba(255,255,255,.7);font-weight:600;transition:.35s}
+  .menu{display:flex;align-items:center;gap:34px}
+  .menu a{font-size:15.5px;font-weight:600;color:rgba(255,255,255,.9);letter-spacing:-.01em;transition:.2s;position:relative}
+  .menu a:hover{color:#fff}
+  .menu a::after{content:"";position:absolute;left:0;bottom:-7px;height:2px;width:0;background:var(--orange);transition:.25s}
+  .menu a:hover::after{width:100%}
+  .nav-cta{background:var(--orange);color:#fff!important;padding:11px 20px;border-radius:100px;font-weight:700;font-size:14.5px;transition:.2s}
+  .nav-cta:hover{background:var(--orange-d);transform:translateY(-1px)}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+  .burger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:.3s}
+
+  /* scrolled state */
+  header.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+  header.scrolled .brand-txt b{color:var(--ink)}
+  header.scrolled .brand-txt span{color:var(--gray)}
+  header.scrolled .menu a{color:var(--ink-2)}
+  header.scrolled .burger span{background:var(--ink)}
+
+  /* ---------- Hero ---------- */
+  .hero{min-height:100vh;display:flex;align-items:center;color:#fff;position:relative;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;background:url("고철사진/중량류/빔.jpg") center/cover;transform:scale(1.08);animation:kb 18s ease-in-out infinite alternate}
+  @keyframes kb{to{transform:scale(1.16) translateY(-10px)}}
+  .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(20,22,28,.92) 0%,rgba(20,22,28,.72) 42%,rgba(20,22,28,.30) 100%)}
+  .hero .wrap{position:relative;z-index:2;padding-top:90px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:14px;font-weight:700;letter-spacing:.04em;color:#fff;background:rgba(232,84,30,.18);border:1px solid rgba(232,84,30,.55);padding:8px 16px;border-radius:100px;margin-bottom:26px}
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 4px rgba(232,84,30,.3)}
+  .hero h1{font-size:clamp(32px,5.4vw,60px);font-weight:800;line-height:1.18;letter-spacing:-.03em;max-width:16ch}
+  .hero h1 .hl{color:var(--orange)}
+  .hero p{margin-top:24px;font-size:clamp(16px,1.7vw,19px);color:rgba(255,255,255,.82);max-width:52ch;font-weight:400}
+  .hero-actions{margin-top:38px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:16px 30px;border-radius:100px;font-weight:700;font-size:16px;transition:.22s;cursor:pointer;border:0}
+  .btn-primary{background:var(--orange);color:#fff}
+  .btn-primary:hover{background:var(--orange-d);transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(232,84,30,.6)}
+  .btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.32);backdrop-filter:blur(6px)}
+  .btn-ghost:hover{background:rgba(255,255,255,.16)}
+  .hero-strip{position:absolute;left:0;right:0;bottom:0;z-index:2;border-top:1px solid rgba(255,255,255,.14);background:rgba(20,22,28,.35);backdrop-filter:blur(6px)}
+  .hero-strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);padding-top:0;padding-bottom:0}
+  .hstat{padding:22px 8px;text-align:center;border-left:1px solid rgba(255,255,255,.12)}
+  .hstat:first-child{border-left:0}
+  .hstat b{display:block;font-size:clamp(22px,2.6vw,30px);font-weight:800;color:#fff;letter-spacing:-.02em}
+  .hstat span{font-size:13px;color:rgba(255,255,255,.66)}
+
+  /* ---------- Section heading ---------- */
+  .sec{padding:110px 0}
+  .sec-soft{background:var(--bg-soft)}
+  .tag{color:var(--orange);font-weight:800;font-size:14px;letter-spacing:.14em;text-transform:uppercase}
+  .sec-title{font-size:clamp(27px,3.6vw,42px);font-weight:800;letter-spacing:-.03em;margin-top:12px;line-height:1.25}
+  .sec-sub{color:var(--gray);font-size:17px;margin-top:16px;max-width:60ch}
+  .head-center{text-align:center;max-width:720px;margin:0 auto 60px}
+  .head-center .sec-sub{margin-left:auto;margin-right:auto}
+
+  /* ---------- Business areas ---------- */
+  .areas{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+  .area{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 24px;transition:.28s;position:relative;overflow:hidden}
+  .area::before{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:var(--orange);transition:.3s}
+  .area:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+  .area:hover::before{width:100%}
+  .area .ico{width:52px;height:52px;border-radius:13px;background:rgba(232,84,30,.1);display:grid;place-items:center;margin-bottom:20px}
+  .area .ico svg{width:26px;height:26px;stroke:var(--orange);fill:none;stroke-width:1.7}
+  .area h3{font-size:20px;font-weight:800;letter-spacing:-.02em}
+  .area p{color:var(--gray);font-size:14.5px;margin-top:8px}
+
+  /* ---------- Greeting ---------- */
+  .greet{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+  .greet-media{position:relative}
+  .greet-media img{width:100%;height:520px;object-fit:cover;border-radius:var(--radius)}
+  .greet-badge{position:absolute;left:-26px;bottom:-26px;background:var(--orange);color:#fff;padding:26px 30px;border-radius:14px;box-shadow:var(--shadow);max-width:230px}
+  .greet-badge b{font-size:34px;font-weight:800;display:block;line-height:1}
+  .greet-badge span{font-size:14px;opacity:.9}
+  .greet blockquote{font-size:clamp(21px,2.4vw,27px);font-weight:700;letter-spacing:-.02em;line-height:1.5;color:var(--ink)}
+  .greet blockquote .hl{color:var(--orange)}
+  .greet .body{color:#4b5060;font-size:16px;margin-top:22px}
+  .greet .body p+p{margin-top:14px}
+  .greet .sign{margin-top:26px;display:flex;align-items:center;gap:14px}
+  .greet .sign .line{width:34px;height:2px;background:var(--ink)}
+  .greet .sign b{font-size:17px;font-weight:800}
+  .greet .sign span{color:var(--gray);font-size:14px}
+
+  /* ---------- Products / gallery ---------- */
+  .tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:40px}
+  .tab{padding:11px 22px;border-radius:100px;border:1px solid var(--line);background:#fff;font-weight:700;font-size:15px;color:var(--ink-2);cursor:pointer;transition:.2s}
+  .tab:hover{border-color:var(--orange);color:var(--orange)}
+  .tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .card{position:relative;border-radius:var(--radius);overflow:hidden;cursor:pointer;aspect-ratio:4/3;background:#eee}
+  .card img{width:100%;height:100%;object-fit:cover;transition:.5s}
+  .card:hover img{transform:scale(1.08)}
+  .card .cap{position:absolute;left:0;right:0;bottom:0;padding:34px 18px 16px;color:#fff;background:linear-gradient(transparent,rgba(20,22,28,.82));display:flex;align-items:center;justify-content:space-between}
+  .card .cap b{font-size:16px;font-weight:700}
+  .card .cap em{font-size:12px;font-style:normal;background:var(--orange);padding:3px 9px;border-radius:100px;font-weight:700}
+  .card.hide{display:none}
+  .card-ph .ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+    background:repeating-linear-gradient(135deg,#f1f2f5 0 14px,#e9ebef 14px 28px);color:#9aa0ab;font-weight:700;font-size:15px}
+  .card-ph .ph span{font-size:30px;filter:grayscale(.2)}
+  .card-ph:hover .ph{color:var(--orange)}
+
+  /* ---------- Why / process ---------- */
+  .why{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .why-item{text-align:left}
+  .why-num{font-size:15px;font-weight:800;color:var(--orange);letter-spacing:.1em}
+  .why-item h4{font-size:19px;font-weight:800;margin:12px 0 8px;letter-spacing:-.02em}
+  .why-item p{color:var(--gray);font-size:14.5px}
+  .why-item .bar{height:3px;background:var(--line);border-radius:2px;margin-top:18px;position:relative;overflow:hidden}
+  .why-item .bar::after{content:"";position:absolute;left:0;top:0;bottom:0;width:40%;background:var(--orange);border-radius:2px}
+
+  /* ---------- CTA band ---------- */
+  .band{background:linear-gradient(120deg,var(--charcoal),#2b2f3a);color:#fff;border-radius:24px;padding:60px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;position:relative;overflow:hidden}
+  .band::before{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;background:radial-gradient(circle,rgba(232,84,30,.35),transparent 70%)}
+  .band h3{font-size:clamp(24px,3vw,34px);font-weight:800;letter-spacing:-.02em;position:relative}
+  .band p{color:rgba(255,255,255,.7);margin-top:10px;position:relative}
+  .band .actions{display:flex;gap:12px;position:relative;flex-wrap:wrap}
+
+  /* ---------- Contact ---------- */
+  .contact{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  .info-row{display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--line)}
+  .info-row:first-child{padding-top:0}
+  .info-ico{width:46px;height:46px;flex:none;border-radius:12px;background:rgba(232,84,30,.1);display:grid;place-items:center}
+  .info-ico svg{width:22px;height:22px;stroke:var(--orange);fill:none;stroke-width:1.7}
+  .info-row .t{font-size:13px;color:var(--gray);font-weight:600;letter-spacing:.02em}
+  .info-row .v{font-size:18px;font-weight:700;letter-spacing:-.01em;margin-top:2px}
+  .info-row .v small{display:block;font-size:14px;font-weight:500;color:var(--gray);letter-spacing:0}
+  .map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);height:100%;min-height:420px;background:
+    linear-gradient(rgba(20,22,28,.04),rgba(20,22,28,.04)),
+    repeating-linear-gradient(0deg,#eef0f4 0 24px,#f6f7f9 24px 48px),
+    repeating-linear-gradient(90deg,#eef0f4 0 24px,#f6f7f9 24px 48px);
+    display:grid;place-items:center;position:relative}
+  .map .pin{text-align:center}
+  .map .pin .dot{width:20px;height:20px;border-radius:50% 50% 50% 0;background:var(--orange);transform:rotate(-45deg);margin:0 auto 14px;box-shadow:0 8px 20px -6px rgba(232,84,30,.7)}
+  .map .pin b{display:block;font-weight:800;font-size:17px}
+  .map .pin span{color:var(--gray);font-size:14px}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--charcoal);color:rgba(255,255,255,.62);padding:64px 0 32px}
+  .foot-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .foot-brand .brand-txt b{color:#fff}
+  .foot-brand p{margin-top:16px;font-size:14px;max-width:38ch}
+  .foot-cols{display:flex;gap:64px;flex-wrap:wrap}
+  .foot-col h5{color:#fff;font-size:14px;font-weight:700;letter-spacing:.02em;margin-bottom:14px}
+  .foot-col a,.foot-col p{display:block;font-size:14px;margin-bottom:9px;transition:.2s}
+  .foot-col a:hover{color:var(--orange)}
+  .foot-bottom{padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px;color:rgba(255,255,255,.4)}
+
+  /* ---------- Lightbox ---------- */
+  .lb{position:fixed;inset:0;z-index:200;background:rgba(15,16,20,.92);display:none;align-items:center;justify-content:center;padding:30px;cursor:zoom-out}
+  .lb.open{display:flex}
+  .lb img{max-width:92vw;max-height:88vh;border-radius:10px;box-shadow:0 30px 80px -20px rgba(0,0,0,.8)}
+  .lb .x{position:absolute;top:22px;right:26px;color:#fff;font-size:34px;background:none;border:0;cursor:pointer;opacity:.8}
+  .lb .x:hover{opacity:1}
+
+  /* ---------- Reveal anim ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:.7s cubic-bezier(.22,1,.36,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- Responsive ---------- */
+  @media(max-width:1024px){
+    .areas{grid-template-columns:repeat(3,1fr)}
+    .grid{grid-template-columns:repeat(3,1fr)}
+    .why{grid-template-columns:repeat(2,1fr)}
+    .greet{grid-template-columns:1fr;gap:48px}
+    .greet-media img{height:400px}
+  }
+  @media(max-width:720px){
+    .menu{position:fixed;inset:0 0 auto 0;top:74px;flex-direction:column;background:#fff;padding:22px 24px 30px;gap:6px;box-shadow:0 20px 40px -20px rgba(0,0,0,.3);transform:translateY(-140%);transition:.35s;align-items:stretch}
+    .menu.open{transform:none}
+    .menu a{color:var(--ink)!important;padding:12px 4px;border-bottom:1px solid var(--line);font-size:16px}
+    .menu a::after{display:none}
+    .nav-cta{text-align:center;margin-top:8px}
+    .burger{display:flex}
+    .sec{padding:76px 0}
+    .areas{grid-template-columns:1fr 1fr}
+    .grid{grid-template-columns:1fr 1fr;gap:12px}
+    .why{grid-template-columns:1fr}
+    .contact{grid-template-columns:1fr;gap:34px}
+    .hero-strip .wrap{grid-template-columns:1fr 1fr}
+    .hstat:nth-child(1),.hstat:nth-child(2){border-bottom:1px solid rgba(255,255,255,.12)}
+    .hstat:nth-child(3){border-left:0}
+    .band{padding:38px 26px}
+    .greet-badge{left:auto;right:16px;bottom:-20px}
+  }
+  @media(max-width:420px){
+    .areas{grid-template-columns:1fr}
+  }
+</style>
+
+<!-- ===================== HEADER ===================== -->
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="도담스틸 홈">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect class="stem" x="8" y="9" width="12" height="46" rx="2"/>
+        <path class="bowl" d="M18 9 A23 23 0 0 1 18 55 Z"/>
+        <path class="wedge" d="M18 32 L18 9 A23 23 0 0 1 41 32 Z"/>
+      </svg>
+      <span class="brand-txt"><b>도담스틸</b><span>DODAM&nbsp;STEEL</span></span>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#about">회사소개</a>
+      <a href="#areas">사업분야</a>
+      <a href="#products">취급품목</a>
+      <a href="#why">도담의 약속</a>
+      <a href="#contact">오시는길</a>
+      <a href="#contact" class="nav-cta">문의하기</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <span class="eyebrow reveal"><span class="dot"></span>고철 · 비철 · 철거 · 압연재 · 공장 전문</span>
+    <h1 class="reveal">철저한 품질과 신뢰로,<br/>함께 <span class="hl">단단한 미래</span>를<br/>만들어갑니다.</h1>
+    <p class="reveal">(주)도담스틸은 철강·금속 자원의 원활한 순환과 최고의 품질 공급으로,
+      고객의 성장을 뒷받침하는 가장 단단한 버팀목이 되겠습니다.</p>
+    <div class="hero-actions reveal">
+      <a href="#products" class="btn btn-primary">취급품목 보기 →</a>
+      <a href="#contact" class="btn btn-ghost">매입·철거 문의</a>
+    </div>
+  </div>
+  <div class="hero-strip">
+    <div class="wrap">
+      <div class="hstat"><b>5대</b><span>전문 품목군 취급</span></div>
+      <div class="hstat"><b>고철·비철</b><span>철강 자원 순환</span></div>
+      <div class="hstat"><b>철거·공장</b><span>설비 일괄 처리</span></div>
+      <div class="hstat"><b>정직·신용</b><span>초심을 지키는 거래</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT / GREETING ===================== -->
+<section class="sec" id="about">
+  <div class="wrap greet">
+    <div class="greet-media reveal">
+      <img src="고철사진/압연재/압연재.jpg" alt="도담스틸 압연재 야적장" />
+      <div class="greet-badge">
+        <b>도담</b>
+        <span>‘단단하고 아름답다’는 이름처럼, 신뢰로 쌓아온 자원 순환</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <span class="tag">CEO Message</span>
+      <blockquote>“고객의 가치를 최우선으로, 언제나 믿고 찾을 수 있는 <span class="hl">든든한 파트너</span>가 되겠습니다.”</blockquote>
+      <div class="body">
+        <p>저희 (주)도담스틸은 창립 이래 철강·금속 자원의 원활한 순환과 최고의 품질 공급을 통해
+          고객사와의 두터운 신뢰를 쌓아왔습니다.</p>
+        <p>급변하는 시장 환경 속에서도 끊임없는 도전과 철저한 품질 관리로 고객이 원하는 최적의 솔루션을 제공합니다.
+          단순한 비즈니스 파트너를 넘어, 고객사의 성장과 성공을 뒷받침하는 가장 단단한 버팀목이 되겠습니다.</p>
+      </div>
+      <div class="sign">
+        <span class="line"></span>
+        <div><b>전동혁</b> <span>／ (주)도담스틸 대표이사</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BUSINESS AREAS ===================== -->
+<section class="sec sec-soft" id="areas">
+  <div class="wrap">
+    <div class="head-center reveal">
+      <span class="tag">Business</span>
+      <h2 class="sec-title">하나의 파트너, 다섯 개의 전문 분야</h2>
+      <p class="sec-sub">매입부터 철거·처리까지, 철강 자원의 전 과정을 도담스틸이 책임집니다.</p>
+    </div>
+    <div class="areas">
+      <div class="area reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4"/><path d="M3 17l9 4 9-4"/></svg></div>
+        <h3>고철 매입</h3>
+        <p>생철·경량·중량 등 각종 철스크랩을 정확한 계량과 합리적 시세로 매입합니다.</p>
+      </div>
+      <div class="area reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M8.5 10.5h7"/></svg></div>
+        <h3>비철 매입</h3>
+        <p>구리·알루미늄·스테인리스 등 비철 스크랩을 품위별로 선별·매입합니다.</p>
+      </div>
+      <div class="area reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 20h16M6 20V9l6-4 6 4v11"/><path d="M10 20v-5h4v5"/></svg></div>
+        <h3>철거</h3>
+        <p>공장·건물·구조물 철거를 안전기준에 맞춰 신속하고 깔끔하게 진행합니다.</p>
+      </div>
+      <div class="area reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="1.5"/><path d="M3 11h18M3 13h18"/></svg></div>
+        <h3>압연재</h3>
+        <p>후판·강판 등 압연 공정 발생재를 규격별로 수거·공급합니다.</p>
+      </div>
+      <div class="area reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/></svg></div>
+        <h3>공장 전문</h3>
+        <p>설비·기계 일괄 매입 및 처리, 공장 이전·정리를 원스톱으로 지원합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRODUCTS ===================== -->
+<section class="sec" id="products">
+  <div class="wrap">
+    <div class="head-center reveal">
+      <span class="tag">Products</span>
+      <h2 class="sec-title">도담스틸이 취급하는 품목</h2>
+      <p class="sec-sub">현장에서 직접 촬영한 실제 품목 사진입니다. 카테고리를 눌러 원하는 품목을 확인하세요.</p>
+    </div>
+
+    <div class="tabs reveal" id="tabs">
+      <button class="tab active" data-cat="all">전체</button>
+      <button class="tab" data-cat="heavy">중량류</button>
+      <button class="tab" data-cat="light">경량류</button>
+      <button class="tab" data-cat="raw">생철류</button>
+      <button class="tab" data-cat="lathe">선반류</button>
+      <button class="tab" data-cat="roll">압연재</button>
+      <button class="tab" data-cat="steel">스텐레스</button>
+    </div>
+
+    <div class="grid" id="grid">
+      <!-- 중량류 -->
+      <figure class="card reveal" data-cat="heavy"><img loading="lazy" src="고철사진/중량류/빔.jpg" alt="빔"><figcaption class="cap"><b>빔·형강</b><em>중량류</em></figcaption></figure>
+      <figure class="card reveal" data-cat="heavy"><img loading="lazy" src="고철사진/중량류/철근.jpg" alt="철근"><figcaption class="cap"><b>철근</b><em>중량류</em></figcaption></figure>
+      <figure class="card reveal" data-cat="heavy"><img loading="lazy" src="고철사진/중량류/환봉.jpg" alt="환봉"><figcaption class="cap"><b>환봉</b><em>중량류</em></figcaption></figure>
+      <figure class="card reveal" data-cat="heavy"><img loading="lazy" src="고철사진/중량류/금형강.jpg" alt="금형강"><figcaption class="cap"><b>금형강</b><em>중량류</em></figcaption></figure>
+      <figure class="card reveal" data-cat="heavy"><img loading="lazy" src="고철사진/중량류/베어링.jpg" alt="베어링"><figcaption class="cap"><b>베어링</b><em>중량류</em></figcaption></figure>
+      <figure class="card reveal" data-cat="heavy"><img loading="lazy" src="고철사진/중량류/단조.jpg" alt="단조"><figcaption class="cap"><b>단조</b><em>중량류</em></figcaption></figure>
+      <figure class="card reveal" data-cat="heavy"><img loading="lazy" src="고철사진/중량류/디스크드럼.jpg" alt="디스크드럼"><figcaption class="cap"><b>디스크·드럼</b><em>중량류</em></figcaption></figure>
+      <!-- 경량류 -->
+      <figure class="card reveal" data-cat="light"><img loading="lazy" src="고철사진/경량류/경량A.jpg" alt="경량A"><figcaption class="cap"><b>경량 A</b><em>경량류</em></figcaption></figure>
+      <figure class="card reveal" data-cat="light"><img loading="lazy" src="고철사진/경량류/경량B.jpg" alt="경량B"><figcaption class="cap"><b>경량 B</b><em>경량류</em></figcaption></figure>
+      <figure class="card reveal" data-cat="light"><img loading="lazy" src="고철사진/경량류/압축A.jpg" alt="압축A"><figcaption class="cap"><b>압축 A</b><em>경량류</em></figcaption></figure>
+      <figure class="card reveal" data-cat="light"><img loading="lazy" src="고철사진/경량류/압축B.jpg" alt="압축B"><figcaption class="cap"><b>압축 B</b><em>경량류</em></figcaption></figure>
+      <!-- 생철류 -->
+      <figure class="card reveal" data-cat="raw"><img loading="lazy" src="고철사진/생철류/생철A.jpg" alt="생철A"><figcaption class="cap"><b>생철 A</b><em>생철류</em></figcaption></figure>
+      <figure class="card reveal" data-cat="raw"><img loading="lazy" src="고철사진/생철류/후판생철.jpg" alt="후판생철"><figcaption class="cap"><b>후판 생철</b><em>생철류</em></figcaption></figure>
+      <figure class="card reveal" data-cat="raw"><img loading="lazy" src="고철사진/생철류/선재.jpg" alt="선재"><figcaption class="cap"><b>선재</b><em>생철류</em></figcaption></figure>
+      <figure class="card reveal" data-cat="raw"><img loading="lazy" src="고철사진/생철류/생철L.jpg" alt="생철L"><figcaption class="cap"><b>생철 L</b><em>생철류</em></figcaption></figure>
+      <!-- 선반류 -->
+      <figure class="card reveal" data-cat="lathe"><img loading="lazy" src="고철사진/선반류/선반C.jpg" alt="선반C"><figcaption class="cap"><b>선반칩 C</b><em>선반류</em></figcaption></figure>
+      <figure class="card reveal" data-cat="lathe"><img loading="lazy" src="고철사진/선반류/선반C%20(3).jpg" alt="선반C"><figcaption class="cap"><b>선반칩</b><em>선반류</em></figcaption></figure>
+      <figure class="card reveal" data-cat="lathe"><img loading="lazy" src="고철사진/선반류/선반C%20(4).jpg" alt="선반C"><figcaption class="cap"><b>선반칩</b><em>선반류</em></figcaption></figure>
+      <figure class="card reveal" data-cat="lathe"><img loading="lazy" src="고철사진/선반류/선반C%20(5).jpg" alt="선반C"><figcaption class="cap"><b>선반칩</b><em>선반류</em></figcaption></figure>
+      <!-- 압연재 -->
+      <figure class="card reveal" data-cat="roll"><img loading="lazy" src="고철사진/압연재/압연재.jpg" alt="압연재"><figcaption class="cap"><b>압연재</b><em>압연재</em></figcaption></figure>
+      <figure class="card reveal" data-cat="roll"><img loading="lazy" src="고철사진/압연재/압연재%20(2).jpg" alt="압연재"><figcaption class="cap"><b>압연재</b><em>압연재</em></figcaption></figure>
+      <figure class="card reveal" data-cat="roll"><img loading="lazy" src="고철사진/압연재/압연재%20(3).jpg" alt="압연재"><figcaption class="cap"><b>압연재</b><em>압연재</em></figcaption></figure>
+      <figure class="card reveal" data-cat="roll"><img loading="lazy" src="고철사진/압연재/압연재%20(4).jpg" alt="압연재"><figcaption class="cap"><b>압연재</b><em>압연재</em></figcaption></figure>
+      <!-- 스텐레스 -->
+      <figure class="card reveal" data-cat="steel"><img loading="lazy" src="고철사진/스텐레스/sts_pipe.png" alt="STS 304 강관"><figcaption class="cap"><b>STS 304 / 316 강관</b><em>스텐레스</em></figcaption></figure>
+      <figure class="card reveal" data-cat="steel"><img loading="lazy" src="고철사진/스텐레스/sts_chips.jpg" alt="스텐 선반칩"><figcaption class="cap"><b>스텐 선반 · 칩</b><em>스텐레스</em></figcaption></figure>
+      <figure class="card reveal" data-cat="steel"><img loading="lazy" src="고철사진/스텐레스/sts_scrap.jpg" alt="스텐 압축 스크랩"><figcaption class="cap"><b>스텐 압축 스크랩</b><em>스텐레스</em></figcaption></figure>
+      <figure class="card reveal" data-cat="steel"><img loading="lazy" src="고철사진/스텐레스/sts_wire.jpg" alt="스텐 강선"><figcaption class="cap"><b>스텐 와이어 · 강선</b><em>스텐레스</em></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY / PROMISE ===================== -->
+<section class="sec sec-soft" id="why">
+  <div class="wrap">
+    <div class="head-center reveal">
+      <span class="tag">Our Promise</span>
+      <h2 class="sec-title">도담스틸이 지키는 네 가지 약속</h2>
+      <p class="sec-sub">‘고객의 성장이 곧 우리의 성장’이라는 신념으로, 작은 디테일 하나 놓치지 않습니다.</p>
+    </div>
+    <div class="why">
+      <div class="why-item reveal">
+        <div class="why-num">01</div>
+        <h4>철저한 품질 관리</h4>
+        <p>품목별 선별과 정확한 계량으로, 제철소·제강사가 신뢰하는 품질을 공급합니다.</p>
+        <div class="bar"></div>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-num">02</div>
+        <h4>신속·정확한 처리</h4>
+        <p>현장의 목소리에 귀 기울여, 매입·철거·정산까지 지체 없이 진행합니다.</p>
+        <div class="bar"></div>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-num">03</div>
+        <h4>정직한 시세·정산</h4>
+        <p>투명한 계량과 합리적 단가로, 언제 거래해도 믿을 수 있는 정산을 약속합니다.</p>
+        <div class="bar"></div>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-num">04</div>
+        <h4>원스톱 대응</h4>
+        <p>고철·비철·철거·공장 설비까지, 복잡한 과정을 한 번에 해결합니다.</p>
+        <div class="bar"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA BAND ===================== -->
+<section class="sec" style="padding-bottom:40px">
+  <div class="wrap">
+    <div class="band reveal">
+      <div>
+        <h3>매입·철거, 지금 바로 상담하세요.</h3>
+        <p>품목·물량 사진을 보내주시면 빠르게 시세를 안내해 드립니다.</p>
+      </div>
+      <div class="actions">
+        <a href="tel:0414140121" class="btn btn-primary">📞 041.414.0121</a>
+        <a href="mailto:dodamst21@naver.com" class="btn btn-ghost">이메일 문의</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="sec sec-soft" id="contact">
+  <div class="wrap">
+    <div class="head-center reveal" style="margin-bottom:48px">
+      <span class="tag">Contact</span>
+      <h2 class="sec-title">오시는 길 · 연락처</h2>
+    </div>
+    <div class="contact">
+      <div class="reveal">
+        <div class="info-row">
+          <div class="info-ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 1114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div>
+            <div class="t">본사 · 하차장 (천안)</div><div class="v">충남 천안시 서북구 직산읍 성진로 439-20</div>
+            <div class="t" style="margin-top:16px">화성 하차장</div><div class="v">경기도 화성시 팔탄면 푸른들판로 579</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-ico"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></div>
+          <div><div class="t">전화 · 휴대폰 · 팩스</div><div class="v">041.414.0121 <small>M 010.5653.9998 ／ F 0502.366.4242</small></div></div>
+        </div>
+        <div class="info-row">
+          <div class="info-ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+          <div><div class="t">이메일</div><div class="v">dodamst21@naver.com</div></div>
+        </div>
+        <div class="info-row" style="border-bottom:0">
+          <div class="info-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <div><div class="t">상담 시간</div><div class="v">평일 08:00 – 18:00 <small>토요일·공휴일 사전 협의</small></div></div>
+        </div>
+      </div>
+      <div class="map reveal">
+        <div class="pin">
+          <div class="dot"></div>
+          <b>(주)도담스틸 본사 (천안)</b>
+          <span>충남 천안시 서북구 직산읍 성진로 439-20 · 화성 하차장 별도 운영</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="brand">
+          <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+            <rect class="stem" x="8" y="9" width="12" height="46" rx="2" fill="#fff"/>
+            <path class="bowl" d="M18 9 A23 23 0 0 1 18 55 Z" fill="#fff"/>
+            <path class="wedge" d="M18 32 L18 9 A23 23 0 0 1 41 32 Z" fill="#E8541E"/>
+          </svg>
+          <span class="brand-txt"><b>도담스틸</b><span style="color:rgba(255,255,255,.5)">DODAM&nbsp;STEEL</span></span>
+        </div>
+        <p>철저한 품질과 신뢰를 바탕으로, 고객과 함께 단단한 미래를 만들어가는 (주)도담스틸입니다.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h5>바로가기</h5>
+          <a href="#about">회사소개</a>
+          <a href="#areas">사업분야</a>
+          <a href="#products">취급품목</a>
+          <a href="#contact">오시는길</a>
+        </div>
+        <div class="foot-col">
+          <h5>연락처</h5>
+          <p>T. 041.414.0121</p>
+          <p>M. 010.5653.9998</p>
+          <p>F. 0502.366.4242</p>
+          <p>E. dodamst21@naver.com</p>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 (주)도담스틸 (DODAM STEEL). All rights reserved.</span>
+      <span>대표이사 전동혁 ｜ 본사 충남 천안시 서북구 직산읍 성진로 439-20 · 화성 하차장 경기도 화성시 팔탄면 푸른들판로 579</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== LIGHTBOX ===================== -->
+<div class="lb" id="lb"><button class="x" aria-label="닫기">&times;</button><img id="lb-img" src="" alt=""></div>
+
+<script>
+  // sticky nav state
+  const hdr=document.getElementById('hdr');
+  const onScroll=()=>hdr.classList.toggle('scrolled',window.scrollY>60);
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+  // mobile menu
+  const burger=document.getElementById('burger'),menu=document.getElementById('menu');
+  burger.addEventListener('click',()=>menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+
+  // product filter
+  const tabs=document.getElementById('tabs'),cards=[...document.querySelectorAll('#grid .card')];
+  tabs.addEventListener('click',e=>{
+    const b=e.target.closest('.tab');if(!b)return;
+    tabs.querySelector('.active').classList.remove('active');b.classList.add('active');
+    const c=b.dataset.cat;
+    cards.forEach(card=>{
+      const show=(c==='all'||card.dataset.cat===c);
+      card.classList.toggle('hide',!show);
+    });
+  });
+
+  // lightbox
+  const lb=document.getElementById('lb'),lbImg=document.getElementById('lb-img');
+  document.getElementById('grid').addEventListener('click',e=>{
+    const img=e.target.closest('.card')?.querySelector('img');
+    if(!img)return;lbImg.src=img.src;lbImg.alt=img.alt;lb.classList.add('open');
+  });
+  const closeLb=()=>lb.classList.remove('open');
+  lb.addEventListener('click',closeLb);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
+
+  // scroll reveal
+  const io=new IntersectionObserver((ents)=>{
+    ents.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{
+    el.style.transitionDelay=(i%6*40)+'ms';io.observe(el);
+  });
+</script>

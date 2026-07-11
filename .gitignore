@@ -1,0 +1,7 @@
+# 내부 작업 자료 (웹사이트 배포 대상 아님)
+수정사항/
+
+# OS 생성 파일
+Thumbs.db
+.DS_Store
+desktop.ini
